@@ -51,6 +51,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Visual Studio Code Result Files
+# Ignore compiled binaries
 .vscode/
 main
+/build/
