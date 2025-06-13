@@ -57,15 +57,33 @@ MemInfo *GetMemInfo(void)
 
 long GetTotMem(void)
 {
-    return 0;
+    MemInfo* temp = GetMemInfo();
+    if(temp == NULL)
+        return -1;
+
+    long totMem = temp->total_kb;
+    free(temp);
+    return totMem;
 }
 
 long GetAvailMem(void)
 {
-    return 0;
+    MemInfo* temp = GetMemInfo();
+    if(temp == NULL)
+        return -1;
+
+    long availMem = temp->available_kb;
+    free(temp);
+    return availMem;
 }
 
 double GetMemUsage(void)
 {
-    return 0.0;
+    MemInfo* temp = GetMemInfo();
+    if(temp == NULL)
+        return -1;
+
+    double usage = temp->usage;
+    free(temp);
+    return usage;
 }
