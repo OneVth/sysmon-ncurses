@@ -45,7 +45,7 @@ MemInfo *GetMemInfo(void)
     fclose(fp);
 
     if (memInfo->available_kb != 0 && memInfo->total_kb != 0)
-        memInfo->usage = 100 * (1 - (double)memInfo->available_kb / memInfo->total_kb);
+        memInfo->usage = (double)(memInfo->total_kb - memInfo->available_kb) / memInfo->total_kb * 100;
     else
     {
         free(memInfo);
