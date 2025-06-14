@@ -1,3 +1,3 @@
-long GetTotMem(void);
-long GetAvailMem(void);
+unsigned long long GetTotMem(void);
+unsigned long long GetAvailMem(void);
 double GetMemUsage(void);

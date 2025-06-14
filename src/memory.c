@@ -3,8 +3,8 @@
 
 typedef struct
 {
-    long total_kb;
-    long available_kb;
+    unsigned long long total_kb;
+    unsigned long long available_kb;
     double usage; // 사용률(%)
 } MemInfo;
 
@@ -37,9 +37,9 @@ MemInfo *GetMemInfo(void)
             break;
 
         if (memInfo->total_kb == 0)
-            sscanf(line, "MemTotal: %8ld kB", &memInfo->total_kb);
+            sscanf(line, "MemTotal: %8llu kB", &memInfo->total_kb);
         if (memInfo->available_kb == 0)
-            sscanf(line, "MemAvailable: %12ld kB", &memInfo->available_kb);
+            sscanf(line, "MemAvailable: %12llu kB", &memInfo->available_kb);
     }
 
     fclose(fp);
