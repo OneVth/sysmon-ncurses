@@ -35,8 +35,6 @@ void DrawMemoryUsage(void)
 	printw(" %.1f%%", usage);
 
 	mvprintw(4, 2, "%d MB / %d MB", total - avail, total);
-
-	getch();
 }
 
 void CloseUI(void)
